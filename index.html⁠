@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>វិញ្ញាសាគីមីវិទ្យា (MCQ 25)</title>
+
+  <!-- Google Fonts: Kantumruy Pro & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for Rendering Chemistry Formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #6366f1;
+      --primary-subtle: #eef2ff;
+      --success: #10b981;
+      --success-bg: #ecfdf5;
+      --danger: #ef4444;
+      --danger-bg: #fef2f2;
+      --bg: #f4f6fb;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Kantumruy Pro', 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+    }
+
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .brand-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .btn-share {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-share:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    /* Main Container */
+    .container {
+      width: 100%;
+      max-width: 740px;
+      padding: 30px 16px 60px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+      padding: 36px 28px;
+    }
+
+    /* Start Screen */
+    .icon-hero {
+      width: 72px;
+      height: 72px;
+      background: #eff6ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin: 0 auto 18px;
+    }
+
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-align: center;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .hero-desc {
+      text-align: center;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* Mode Selection Grid */
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 620px) {
+      .mode-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .mode-card {
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      gap: 12px;
+      background: #ffffff;
+      user-select: none;
+    }
+
+    .mode-card:hover {
+      border-color: #cbd5e1;
+    }
+
+    .mode-card.active {
+      border-color: var(--primary);
+      background: var(--primary-subtle);
+    }
+
+    .mode-radio {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .mode-content h3 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+    }
+
+    .mode-card.active .mode-content h3 {
+      color: var(--primary);
+    }
+
+    .mode-content p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Action Buttons */
+    .btn-main {
+      width: 100%;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .btn-main:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--text);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+    }
+
+    /* Active Quiz Screen */
+    .quiz-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge-mode {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    .timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef2f2;
+      color: var(--danger);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #0f172a;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.98rem;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover:not(.disabled) {
+      border-color: var(--primary);
+      background: #fafafa;
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary-subtle);
+      font-weight: 600;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success) !important;
+      background: var(--success-bg) !important;
+      color: #065f46;
+      font-weight: 600;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-bg) !important;
+      color: #991b1b;
+    }
+
+    .opt-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      color: var(--text-muted);
+    }
+
+    .option-btn.selected .opt-letter {
+      background: var(--primary);
+      color: white;
+    }
+
+    .option-btn.correct .opt-letter {
+      background: var(--success);
+      color: white;
+    }
+
+    .option-btn.wrong .opt-letter {
+      background: var(--danger);
+      color: white;
+    }
+
+    /* Explanation Box for Practice Mode */
+    .explanation-box {
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .explanation-box.correct {
+      background: var(--success-bg);
+      border: 1px solid #bbf7d0;
+      color: #065f46;
+    }
+
+    .explanation-box.wrong {
+      background: var(--danger-bg);
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Palette Grid */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(36px, 1fr));
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .palette-btn {
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: white;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .palette-btn.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      border-width: 2px;
+    }
+
+    .palette-btn.answered {
+      background: #eff6ff;
+      border-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* Review Screen */
+    .score-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 4px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .score-big {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .review-card {
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .review-card.correct {
+      background: var(--success-bg);
+      border-color: #bbf7d0;
+    }
+
+    .review-card.wrong {
+      background: var(--danger-bg);
+      border-color: #fecaca;
+    }
+
+    .hide {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="brand-icon">✏️</div>
+      <div class="brand-text">
+        <h1>វិញ្ញាសាគីមីវិទ្យា (MCQ 25)</h1>
+        <p>សមាសធាតុអ៉ីយុង & អេឡិចត្រូលីត</p>
+      </div>
+    </div>
+    <button class="btn-share" onclick="shareSite()">🔗 ចែករំលែក</button>
+  </nav>
+
+  <div class="container">
+
+    <!-- Screen 1: Start Screen -->
+    <div id="screen-start" class="card">
+      <div class="icon-hero">🧪</div>
+      <h2 class="hero-title">កម្រងសំណួរពហុជ្រើសរើស គីមីវិទ្យា</h2>
+      <p class="hero-desc">
+        កម្រងសំណួរនេះដកស្រង់ចេញពីមេរៀន សមាសធាតុអ៉ីយុង ការបំបែក អ៉ីយូណកម្ម និងអេឡិចត្រូលីត (សរុប ២៥ សំណួរ)។ រាល់ពេលចាប់ផ្តើម សំណួរនិងជម្រើសចម្លើយនឹងត្រូវ <strong>ផ្លាស់គ្នាដោយស្វ័យប្រវត្តិ (Randomize)</strong> ដើម្បីពង្រឹងសមត្ថភាពជាក់ស្តែង។
+      </p>
+
+      <!-- 2 Modes selection -->
+      <div class="mode-grid">
+        <div class="mode-card active" id="card-practice" onclick="setMode('practice')">
+          <input type="radio" name="quiz-mode" class="mode-radio" id="mode-practice" checked>
+          <div class="mode-content">
+            <h3>របៀបអនុវត្ត (Practice Mode)</h3>
+            <p>ដឹងចម្លើយភ្លាមៗពេលចុចជ្រើសរើស ព្រមទាំងមានការពន្យល់លម្អិត។</p>
+          </div>
+        </div>
+
+        <div class="mode-card" id="card-exam" onclick="setMode('exam')">
+          <input type="radio" name="quiz-mode" class="mode-radio" id="mode-exam">
+          <div class="mode-content">
+            <h3>របៀបប្រឡង (Exam Mode)</h3>
+            <p>មានកំណត់ម៉ោង ២៥ នាទី និងបង្ហាញពិន្ទុសរុបក្រោយពេលប្រគល់កិច្ចការ។</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-main" onclick="startQuiz()">ចាប់ផ្តើមធ្វើតេស្តឥឡូវនេះ 🚀</button>
+    </div>
+
+    <!-- Screen 2: Active Quiz -->
+    <div id="screen-quiz" class="card hide">
+      <div class="quiz-bar">
+        <div>
+          <span id="badge-current-mode" class="badge-mode">របៀបអនុវត្ត</span>
+          <span style="font-size: 0.88rem; color: var(--text-muted); margin-left: 8px;" id="q-counter">សំណួរទី ១ / ២៥</span>
+        </div>
+        <span class="timer-badge" id="timer-display">⏱️ 25:00</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-bar"></div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-grid" id="options-container"></div>
+      
+      <!-- Practice Feedback Box -->
+      <div id="practice-feedback" class="explanation-box hide"></div>
+
+      <div class="nav-actions">
+        <button class="btn-secondary" id="btn-prev" onclick="prevQuestion()">ថយក្រោយ</button>
+        <button class="btn-main" id="btn-next" onclick="nextQuestion()">បន្ទាប់</button>
+      </div>
+
+      <div id="palette-wrapper" style="margin-top: 22px;">
+        <p style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;">ផ្ទាំងប្តូរសំណួរ៖</p>
+        <div class="palette-grid" id="palette-container"></div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Results & Review -->
+    <div id="screen-result" class="card hide" style="text-align: center;">
+      <div class="score-circle">
+        <div class="score-big" id="final-score">0</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted);">លើ ២៥ ពិន្ទុ</div>
+      </div>
+
+      <h2 id="result-message" style="margin-bottom: 6px;">បញ្ចប់ការធ្វើតេស្ត!</h2>
+      <p id="result-detail" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 22px;"></p>
+
+      <div class="nav-actions" style="margin-bottom: 26px;">
+        <button class="btn-main" onclick="startQuiz()">🔄 ធ្វើតេស្តម្តងទៀត</button>
+        <button class="btn-secondary" onclick="shareSite()">🔗 ចែករំលែក</button>
+      </div>
+
+      <h3 style="text-align: left; margin-bottom: 14px; font-size: 1.05rem;">📝 ពិនិត្យចម្លើយឡើងវិញ៖</h3>
+      <div id="review-list"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // 25 Questions strictly from lessons.
+    // Option at index 0 is ALWAYS strictly the correct answer originally.
+    const rawQuestions = [
+      {
+        question: "តើ «អ៉ីយុងអាលុយមីណាត» (Aluminate ion) មានរូបមន្តដូចម្តេច?",
+        options: ["$\\text{AlO}_2^-$", "$\\text{PbO}_2^{2-}$", "$\\text{ZnO}_2^{2-}$", "$\\text{Al}^{3+}$"]
+      },
+      {
+        question: "តើ «អ៉ីយុងប្លុំបាត» (Plumbat ion) មានរូបមន្តដូចម្តេច?",
+        options: ["$\\text{PbO}_2^{2-}$", "$\\text{AlO}_2^-$", "$\\text{ZnO}_2^{2-}$", "$\\text{Pb}^{2+}$"]
+      },
+      {
+        question: "តើ «អ៉ីយុងស័ង្កសីកាត» (Zincat ion) មានរូបមន្តដូចម្តេច?",
+        options: ["$\\text{ZnO}_2^{2-}$", "$\\text{PbO}_2^{2-}$", "$\\text{AlO}_2^-$", "$\\text{Zn}^{2+}$"]
+      },
+      {
+        question: "តើអ៉ីយុងទស្សនិកជាអ្វី?",
+        options: [
+          "ជាអ៉ីយុងដែលមិនផ្លាស់ប្តូររូប ឬមិនចូលរួមប្រតិកម្ម",
+          "ជាអ៉ីយុងដែលបង្កើតជាកករក្នុងទឹក",
+          "ជាអ៉ីយុងដែលបំប្លែងទៅជាឧស្ម័ន",
+          "ជាអ៉ីយុងវិជ្ជមានតែមួយមុខគត់"
+        ]
+      },
+      {
+        question: "តើការបំបែកជាអ្វី?",
+        options: [
+          "ជាលំនាំបែកបង្កើតជាអ៉ីយុងនៅពេលដែលសមាសធាតុអ៉ីយុងរលាយក្នុងទឹក",
+          "ជាលំនាំបំប្លែងធាតុរាវទៅជាឧស្ម័ន",
+          "ជាការបង្កើតសម្ព័ន្ធកូវ៉ាឡង់ថ្មី",
+          "ជាការរលាយនៃអង្គធាតុដោយមិនបង្កើតអ៉ីយុង"
+        ]
+      },
+      {
+        question: "តើអ៉ីយូណកម្មជាអ្វី?",
+        options: [
+          "ជាលំនាំបង្កើតជាអ៉ីយុងរបស់ម៉ូលេគុលនៃអង្គធាតុរលាយក្នុងអង្គធាតុរំលាយ",
+          "ជាប្រតិកម្មដែលមិនបង្កើតអ៉ីយុងទាល់តែសោះ",
+          "ជាការរលាយនៃសមាសធាតុមិនបែកក្នុងទឹក",
+          "ជាការផ្តុំគ្នានៃអ៉ីយុងទៅជាកករ"
+        ]
+      },
+      {
+        question: "តើលំនាំអ៉ីយូណកម្មភាគច្រើនកើតមានក្នុងសមាសធាតុប្រភេទណា?",
+        options: [
+          "សមាសធាតុកូវ៉ាឡង់ (ប៉ូលែខ្លាំង)",
+          "សមាសធាតុមិនរលាយក្នុងទឹក",
+          "សារធាតុមិនអេឡិចត្រូលីត",
+          "ប្រេង និងខ្លាញ់"
+        ]
+      },
+      {
+        question: "ក្នុងកម្មវិធីសិក្សា សមាសធាតុរលាយក្នុងសូលុយស្យុងទឹកត្រូវបានគេសិក្សាលើអ៉ីយុងពីរ គឺ៖",
+        options: [
+          "កាចុង (អ៉ីយុងវិជ្ជមាន) និង អានីយុង (អ៉ីយុងអវិជ្ជមាន)",
+          "ប្រូតុង និង ណឺត្រុង",
+          "អាតូម និង ម៉ូលេគុល",
+          "អាស៊ីត និង បាស"
+        ]
+      },
+      {
+        question: "តើសារធាតុមិនអេឡិចត្រូលីតជាអ្វី?",
+        options: [
+          "សមាសធាតុដែលមិនបង្កើតអ៉ីយុងក្នុងទឹក ហើយមិនចម្លងចរន្តអគ្គិសនី",
+          "សមាសធាតុដែលបង្កើតអ៉ីយុងតិចតួចក្នុងទឹក",
+          "សមាសធាតុដែលបែកទាំងស្រុងក្នុងទឹក",
+          "សូលុយស្យុងអាស៊ីតខ្លាំង"
+        ]
+      },
+      {
+        question: "តើសារធាតុអេឡិចត្រូលីតខ្លាំងជាអ្វី?",
+        options: [
+          "សមាសធាតុដែលបង្កើតអ៉ីយុងទាំងស្រុងក្នុងទឹក ហើយចម្លងចរន្តអគ្គិសនីបានល្អ",
+          "សមាសធាតុដែលមិនបង្កើតអ៉ីយុងក្នុងទឹក",
+          "សមាសធាតុដែលបង្កើតអ៉ីយុងតិចតួចក្នុងទឹក",
+          "សមាសធាតុដែលមិនចម្លងចរន្តអគ្គិសនី"
+        ]
+      },
+      {
+        question: "តើសារធាតុអេឡិចត្រូលីតខ្សោយជាអ្វី?",
+        options: [
+          "សមាសធាតុដែលបង្កើតអ៉ីយុងតិចតួចក្នុងទឹក ហើយចម្លងចរន្តអគ្គិសនីមិនបានល្អ",
+          "សមាសធាតុដែលបង្កើតអ៉ីយុងទាំងស្រុងក្នុងទឹក",
+          "សមាសធាតុដែលមិនរលាយក្នុងទឹក",
+          "សមាសធាតុដែលចម្លងចរន្តអគ្គិសនីបានល្អបំផុត"
+        ]
+      },
+      {
+        question: "តើសារធាតុខាងក្រោមណាខ្លះជា «សារធាតុមិនអេឡិចត្រូលីត»?",
+        options: [
+          "$\\text{H}_2\\text{O}$ , ប្រេង , ខ្លាញ់ , $\\text{C}_6\\text{H}_{12}\\text{O}_6$",
+          "$\\text{HCl}$ , $\\text{HBr}$ , $\\text{KOH}$",
+          "$\\text{NaCl}$ , $\\text{KNO}_3$ , $\\text{CuSO}_4$",
+          "$\\text{HF}$ , $\\text{HNO}_2$ , $\\text{CH}_3\\text{COOH}$"
+        ]
+      },
+      {
+        question: "តើឧស្ម័នប៉ូលែខ្សោយណាខ្លះជាសារធាតុមិនអេឡិចត្រូលីត?",
+        options: [
+          "$\\text{CO}_2$ , $\\text{CH}_4$ , $\\text{H}_2$",
+          "$\\text{HCl}$ , $\\text{HBr}$",
+          "$\\text{NH}_3$ , $\\text{SO}_2$",
+          "$\\text{HF}$ , $\\text{HNO}_2$"
+        ]
+      },
+      {
+        question: "តើសមាសធាតុខាងក្រោមណាខ្លះចាត់ទុកជា «សមាសធាតុមិនបែកក្នុងទឹក»?",
+        options: [
+          "$\\text{CaCO}_3$ និង $\\text{AgCl}$",
+          "$\\text{NaCl}$ និង $\\text{KNO}_3$",
+          "$\\text{KOH}$ និង $\\text{NaOH}$",
+          "$\\text{HCl}$ និង $\\text{HBr}$"
+        ]
+      },
+      {
+        question: "តើក្រុមសារធាតុណាខ្លះជា «អេឡិចត្រូលីតខ្លាំង» (អាស៊ីតខ្លាំង, បាសខ្លាំង, អំបិលបែក)?",
+        options: [
+          "$\\text{HCl}$ , $\\text{NaOH}$ , $\\text{NaCl}$ , $\\text{CuSO}_4$",
+          "$\\text{HF}$ , $\\text{NH}_3$ , $\\text{CH}_3\\text{COOH}$",
+          "$\\text{H}_2\\text{O}$ , ប្រេង , $\\text{C}_6\\text{H}_{12}\\text{O}_6$",
+          "$\\text{CaCO}_3$ , $\\text{AgCl}$ , $\\text{CH}_4$"
+        ]
+      },
+      {
+        question: "តើក្រុមសារធាតុណាខ្លះជា «អេឡិចត្រូលីតខ្សោយ»?",
+        options: [
+          "$\\text{HF}$ , $\\text{HNO}_2$ , $\\text{NH}_3$ , $\\text{CH}_3\\text{COOH}$",
+          "$\\text{HCl}$ , $\\text{HBr}$ , $\\text{KOH}$ , $\\text{NaOH}$",
+          "$\\text{NaCl}$ , $\\text{KNO}_3$ , $\\text{CuSO}_4$",
+          "$\\text{H}_2\\text{O}$ , ខ្លាញ់ , ស្ករគ្លុយកូស"
+        ]
+      },
+      {
+        question: "តើអំបិលក្លរួ ($\\text{Cl}^-$) អាចធ្វើអ៉ីយូណកម្ម (រលាយ) លើកលែងតែពេលវាផ្សំជាមួយអ៉ីយុងណា?",
+        options: [
+          "$\\text{Ag}^+$ និង $\\text{Pb}^{2+}$",
+          "$\\text{Na}^+$ និង $\\text{K}^+$",
+          "$\\text{Ca}^{2+}$ និង $\\text{Ba}^{2+}$",
+          "$\\text{Mg}^{2+}$ និង $\\text{Al}^{3+}$"
+        ]
+      },
+      {
+        question: "តើស៊ុលផាត ($\\text{SO}_4^{2-}$) អាចធ្វើអ៉ីយូណកម្ម លើកលែងតែពេលផ្សំជាមួយអ៉ីយុងណាខ្លះ?",
+        options: [
+          "$\\text{Ag}^+$ , $\\text{Pb}^{2+}$ , $\\text{Ca}^{2+}$ , $\\text{Ba}^{2+}$",
+          "$\\text{Na}^+$ , $\\text{K}^+$ , $\\text{Li}^+$ , $\\text{NH}_4^+$",
+          "$\\text{Mg}^{2+}$ , $\\text{Al}^{3+}$ , $\\text{Zn}^{2+}$",
+          "$\\text{H}^+$ , $\\text{NO}_3^-$"
+        ]
+      },
+      {
+        question: "តើអាសេតាត ($\\text{CH}_3\\text{COO}^-$) អាចធ្វើអ៉ីយូណកម្ម លើកលែងតែពេលផ្សំជាមួយអ៉ីយុងណា?",
+        options: [
+          "$\\text{Al}^{3+}$",
+          "$\\text{Ag}^+$",
+          "$\\text{Ba}^{2+}$",
+          "$\\text{Na}^+$"
+        ]
+      },
+      {
+        question: "កាលណាសមាសធាតុបង្កឡើងពីអ៉ីយុង $\\text{Li}^+, \\text{K}^+, \\text{Na}^+, \\text{NH}_4^+, \\text{NO}_3^-$, និង $\\text{H}^+$ តើវាជាសមាសធាតុបែបណា?",
+        options: [
+          "អាចធ្វើអ៉ីយូណកម្មបាន (រលាយក្នុងទឹកបង្កើតជាអ៉ីយុង)",
+          "មិនអាចធ្វើអ៉ីយូណកម្មបាន (មិនរលាយបង្កើតជាអ៉ីយុង)",
+          "ជាសមាសធាតុមិនរលាយក្នុងទឹកជានិច្ច",
+          "ជាសារធាតុមិនអេឡិចត្រូលីត"
+        ]
+      },
+      {
+        question: "អ៉ីយុង $\\text{SO}_3^{2-}, \\text{SiO}_3^{2-}, \\text{CO}_3^{2-}, \\text{PO}_4^{3-}$ មិនអាចធ្វើអ៉ីយូណកម្មឡើយ លើកលែងតែវាផ្សំជាមួយអ្វី?",
+        options: [
+          "ពពួកអ៉ីយុងដែលអាចធ្វើអ៉ីយូណកម្មខាងលើ ($\\text{Li}^+, \\text{K}^+, \\text{Na}^+, \\text{NH}_4^+ ...$)",
+          "អ៉ីយុង $\\text{Ag}^+$ និង $\\text{Pb}^{2+}$",
+          "អ៉ីយុង $\\text{Ca}^{2+}$ និង $\\text{Ba}^{2+}$",
+          "អ៉ីយុង $\\text{Al}^{3+}$"
+        ]
+      },
+      {
+        question: "អ៉ីយុងស៊ុលភួ ($\\text{S}^{2-}$) ជាទូទៅមិនអាចធ្វើអ៉ីយូណកម្មទេ លើកលែងតែផ្សំជាមួយពពួកអ៉ីយុងធ្វើអ៉ីយូណកម្មខាងលើ និងអ៉ីយុងណាខ្លះទៀត?",
+        options: [
+          "$\\text{Mg}^{2+}$ និង $\\text{Ba}^{2+}$",
+          "$\\text{Ag}^+$ និង $\\text{Pb}^{2+}$",
+          "$\\text{Al}^{3+}$ និង $\\text{Zn}^{2+}$",
+          "$\\text{Ca}^{2+}$ និង $\\text{Cu}^{2+}$"
+        ]
+      },
+      {
+        question: "អ៉ីយុងអ៉ីដ្រុកស៊ីត ($\\text{OH}^-$) មិនអាចធ្វើអ៉ីយូណកម្មទេ លើកលែងតែផ្សំជាមួយពពួកអ៉ីយុងធ្វើអ៉ីយូណកម្មខាងលើ និងអ៉ីយុងណាខ្លះទៀត?",
+        options: [
+          "$\\text{Mg}^{2+}$ , $\\text{Ba}^{2+}$ , $\\text{Ca}^{2+}$",
+          "$\\text{Ag}^+$ , $\\text{Pb}^{2+}$ , $\\text{Al}^{3+}$",
+          "$\\text{Fe}^{2+}$ , $\\text{Fe}^{3+}$ , $\\text{Cu}^{2+}$",
+          "$\\text{Zn}^{2+}$ , $\\text{Pb}^{2+}$"
+        ]
+      },
+      {
+        question: "បើសិននៅក្នុងអង្គធាតុកកើតមានសមាសធាតុមិនស្ថិតស្ថេរ $\\text{H}_2\\text{CO}_3$ តើគេត្រូវសរសេរបំបែកវាទៅជាអ្វី?",
+        options: [
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{CO}_{2(g)}$",
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{SO}_{2(g)}$",
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{NH}_{3(g)}$",
+          "$2\\text{H}^+ + \\text{CO}_3^{2-}$"
+        ]
+      },
+      {
+        question: "បើសិននៅក្នុងអង្គធាតុកកើតមានសមាសធាតុមិនស្ថិតស្ថេរ $\\text{NH}_4\\text{OH}$ តើគេត្រូវសរសេរបំបែកវាទៅជាអ្វី?",
+        options: [
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{NH}_{3(g)}$",
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{CO}_{2(g)}$",
+          "$\\text{H}_2\\text{O}_{(l)} + \\text{SO}_{2(g)}$",
+          "$\\text{NH}_4^+ + \\text{OH}^-$"
+        ]
+      }
+    ];
+
+    let currentMode = 'practice';
+    let questions = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let timerInterval = null;
+    let timeLeft = 25 * 60;
+
+    // Fisher-Yates Shuffle
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.getElementById('card-practice').classList.toggle('active', mode === 'practice');
+      document.getElementById('card-exam').classList.toggle('active', mode === 'exam');
+      document.getElementById('mode-practice').checked = (mode === 'practice');
+      document.getElementById('mode-exam').checked = (mode === 'exam');
+    }
+
+    function prepareData() {
+      const cloned = JSON.parse(JSON.stringify(rawQuestions));
+      cloned.forEach(q => {
+        const correctVal = q.options[0];
+        shuffle(q.options);
+        q.correct = q.options.indexOf(correctVal);
+      });
+      questions = shuffle(cloned);
+      currentIndex = 0;
+      userAnswers = {};
+      timeLeft = 25 * 60;
+    }
+
+    function startQuiz() {
+      if (timerInterval) clearInterval(timerInterval);
+      prepareData();
+
+      document.getElementById('screen-start').classList.add('hide');
+      document.getElementById('screen-result').classList.add('hide');
+      document.getElementById('screen-quiz').classList.remove('hide');
+
+      const modeBadge = document.getElementById('badge-current-mode');
+      const timerDisplay = document.getElementById('timer-display');
+
+      if (currentMode === 'practice') {
+        modeBadge.textContent = 'របៀបអនុវត្ត';
+        timerDisplay.style.display = 'none';
+      } else {
+        modeBadge.textContent = 'របៀបប្រឡង';
+        timerDisplay.style.display = 'inline-flex';
+        startTimer();
+      }
+
+      renderPalette();
+      loadQuestion(0);
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      updateTimerUI();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerUI();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          alert("អស់ពេលធ្វើតេស្តហើយ! កម្មវិធីនឹងផ្ញើចម្លើយដោយស្វ័យប្រវត្តិ។");
+          finishQuiz();
+        }
+      }, 1000);
+    }
+
+    function updateTimerUI() {
+      const min = Math.floor(timeLeft / 60);
+      const sec = timeLeft % 60;
+      document.getElementById('timer-display').textContent = 
+        `⏱️ ${String(min).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+    }
+
+    function loadQuestion(index) {
+      currentIndex = index;
+      const q = questions[currentIndex];
+
+      document.getElementById('q-counter').textContent = `សំណួរទី ${currentIndex + 1} / ${questions.length}`;
+      document.getElementById('progress-bar').style.width = `${((currentIndex + 1) / questions.length) * 100}%`;
+      document.getElementById('question-text').textContent = q.question;
+
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      const feedbackBox = document.getElementById('practice-feedback');
+      feedbackBox.className = 'explanation-box hide';
+      feedbackBox.innerHTML = '';
+
+      const letters = ['A', 'B', 'C', 'D'];
+      const answered = userAnswers[currentIndex] !== undefined;
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('div');
+        btn.className = 'option-btn';
+
+        if (currentMode === 'practice') {
+          if (answered) {
+            btn.classList.add('disabled');
+            if (idx === q.correct) btn.classList.add('correct');
+            if (userAnswers[currentIndex] === idx && idx !== q.correct) btn.classList.add('wrong');
+          } else {
+            btn.onclick = () => selectOption(idx);
+          }
+        } else {
+          // Exam Mode
+          if (userAnswers[currentIndex] === idx) btn.classList.add('selected');
+          btn.onclick = () => selectOption(idx);
+        }
+
+        btn.innerHTML = `
+          <div class="opt-letter">${letters[idx]}</div>
+          <div class="opt-text">${opt}</div>
+        `;
+        container.appendChild(btn);
+      });
+
+      // Show Instant Feedback in Practice Mode
+      if (currentMode === 'practice' && answered) {
+        const isRight = (userAnswers[currentIndex] === q.correct);
+        feedbackBox.classList.remove('hide');
+        if (isRight) {
+          feedbackBox.className = 'explanation-box correct';
+          feedbackBox.innerHTML = `<strong>🎉 ចម្លើយត្រឹមត្រូវ!</strong> អ្នកបានជ្រើសរើសចម្លើយត្រឹមត្រូវគឺ៖ ${letters[q.correct]}. ${q.options[q.correct]}`;
+        } else {
+          feedbackBox.className = 'explanation-box wrong';
+          feedbackBox.innerHTML = `<strong>❌ ចម្លើយមិនទាន់ត្រឹមត្រូវទេ!</strong><br>ចម្លើយដែលត្រឹមត្រូវគឺ៖ <strong>${letters[q.correct]}. ${q.options[q.correct]}</strong>`;
+        }
+      }
+
+      document.getElementById('btn-prev').style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+      const nextBtn = document.getElementById('btn-next');
+      nextBtn.textContent = (currentIndex === questions.length - 1) ? 'បញ្ចប់ការធ្វើតេស្ត' : 'បន្ទាប់';
+
+      updatePalette();
+      triggerMathRender();
+    }
+
+    function selectOption(idx) {
+      userAnswers[currentIndex] = idx;
+      loadQuestion(currentIndex);
+    }
+
+    function nextQuestion() {
+      if (currentIndex === questions.length - 1) {
+        finishQuiz();
+      } else {
+        loadQuestion(currentIndex + 1);
+      }
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        loadQuestion(currentIndex - 1);
+      }
+    }
+
+    function renderPalette() {
+      const container = document.getElementById('palette-container');
+      container.innerHTML = '';
+      questions.forEach((_, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'palette-btn';
+        btn.id = `palette-${i}`;
+        btn.textContent = i + 1;
+        btn.onclick = () => loadQuestion(i);
+        container.appendChild(btn);
+      });
+    }
+
+    function updatePalette() {
+      questions.forEach((_, i) => {
+        const btn = document.getElementById(`palette-${i}`);
+        if (!btn) return;
+        btn.className = 'palette-btn';
+        if (i === currentIndex) btn.classList.add('active');
+        if (userAnswers[i] !== undefined) btn.classList.add('answered');
+      });
+    }
+
+    function finishQuiz() {
+      if (timerInterval) clearInterval(timerInterval);
+
+      document.getElementById('screen-quiz').classList.add('hide');
+      document.getElementById('screen-result').classList.remove('hide');
+
+      let score = 0;
+      const reviewContainer = document.getElementById('review-list');
+      reviewContainer.innerHTML = '';
+      const letters = ['A', 'B', 'C', 'D'];
+
+      questions.forEach((q, i) => {
+        const selected = userAnswers[i];
+        const isCorrect = (selected === q.correct);
+        if (isCorrect) score++;
+
+        const card = document.createElement('div');
+        card.className = `review-card ${isCorrect ? 'correct' : 'wrong'}`;
+        card.innerHTML = `
+          <p style="font-weight: 600; margin-bottom: 6px;">${i + 1}. ${q.question}</p>
+          <p style="font-size: 0.9rem;">
+            ចម្លើយរបស់អ្នក៖ <strong style="color: ${isCorrect ? 'var(--success)' : 'var(--danger)'}">
+              ${selected !== undefined ? `${letters[selected]}.${q.options[selected]}` : 'មិនបានឆ្លើយ'}
+            </strong>
+          </p>
+          ${!isCorrect ? `<p style="font-size: 0.9rem; color: #059669; margin-top: 4px;">ចម្លើយត្រឹមត្រូវ៖ <strong>${letters[q.correct]}.${q.options[q.correct]}</strong></p>` : ''}
+        `;
+        reviewContainer.appendChild(card);
+      });
+
+      const percent = Math.round((score / questions.length) * 100);
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('result-detail').textContent = `ទទួលបាន ${percent}% នៃពិន្ទុសរុប`;
+
+      const msg = document.getElementById('result-message');
+      if (percent >= 80) msg.textContent = "🎉 ល្អឥតខ្ចោះ! អ្នកយល់ច្បាស់មេរៀននេះ!";
+      else if (percent >= 50) msg.textContent = "👍 ល្អបង្គួរ! ព្យាយាមម្តងទៀតដើម្បីបានពិន្ទុពេញ!";
+      else msg.textContent = "💪 ព្យាយាមម្តងទៀត! ពិនិត្យកំហុសខាងក្រោមដើម្បីរៀនបន្ថែម!";
+
+      triggerMathRender();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function shareSite() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'វិញ្ញាសាគីមីវិទ្យា MCQ 25',
+          text: 'ចូលរួមធ្វើតេស្តវិញ្ញាសាគីមីវិទ្យាជាមួយខ្ញុំទាំងអស់គ្នា!',
+          url: window.location.href
+        }).catch(() => {});
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("បានចម្លង Link ចូលទៅក្នុង Clipboard រួចរាល់! អ្នកអាចផ្ញើវាទៅកាន់មិត្តភក្តិបាន។");
+      }
+    }
+
+    // Reliable KaTeX renderer with auto-retry for slower mobile connections
+    function triggerMathRender() {
+      const render = () => {
+        if (window.renderMathInElement) {
+          renderMathInElement(document.body, {
+            delimiters: [
+              { left: '$$', right: '$$', display: true },
+              { left: '$', right: '$', display: false }
+            ],
+            throwOnError: false
+          });
+        } else {
+          setTimeout(render, 100);
+        }
+      };
+      render();
+    }
+
+    window.addEventListener('DOMContentLoaded', triggerMathRender);
+  </script>
+</body>
+</html>
